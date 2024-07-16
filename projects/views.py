@@ -4,8 +4,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 def projects(request):
-    return HttpResponse("Welcome to the Projects App")
+    return render(request,'projects.html')
 
 def project(request,pk):
-    return HttpResponse("single project"+" "+pk)
+    return render(request,'single_project.html')
 
