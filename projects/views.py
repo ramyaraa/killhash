@@ -13,8 +13,12 @@ def projects(request):
     context = {'page': page,'number': number,'projects': projectsList}
     return render(request,'projects/projects.html',context)
 
-def project(request,pk):
-    return render(request,'projects/single_project.html')
+def project(request, pk):
+    projectObj = None
+    for i in projectsList:
+        if i['id'] == pk:
+            projectObj = i
+    return render(request, 'projects/single_project.html', {'project': projectObj})
 
 
 
