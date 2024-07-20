@@ -9,11 +9,13 @@
 <p>number is less than 10</p>
 {% endif %}
 
-<h1> projects templates </h1>
-<p>
-  assumenda,osam maxime harum doloribus eligendi voluptates? Imp
-  edit natus id consequuntur similique necessitatibus,
-   eaque quae iusto error molestiae rerum. Atque 
-</p>
+<hr>
+
+<ul>
+{% for project in projects %}
+<li>title: {{project.title}} ,  id:{{project.id}}  ,  description:{{project.description}}</li>
+
+{% endfor %}
+<ul/>
 
 {% endblock content %}
