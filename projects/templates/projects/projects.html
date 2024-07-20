@@ -1,7 +1,14 @@
 {% extends 'main.html'%}
 
 {% block content %}
-{{message}}
+<p>you are in the {{page}} page.</p>
+
+{% if number > 10 %}
+<p>number is greater than 10</p>
+{% else %}
+<p>number is less than 10</p>
+{% endif %}
+
 <h1> projects templates </h1>
 <p>
   assumenda,osam maxime harum doloribus eligendi voluptates? Imp

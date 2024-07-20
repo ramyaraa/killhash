@@ -3,8 +3,10 @@ from django.http import HttpResponse
 
 # Create your views here.
 def projects(request):
-    msg = "you are in the project"
-    return render(request,'projects/projects.html',{'message':msg})# for adding this message to templates just create a vireable and pass the message key
+    page= "projects"
+    number = 11
+    context = {'page': page,'number': number}
+    return render(request,'projects/projects.html',context)
 
 def project(request,pk):
     return render(request,'projects/single_project.html')
