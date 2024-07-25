@@ -14,7 +14,7 @@
 <ul>
 {% for project in projects %}
 <!-- <a href="/project/{{project.id}}"> id:{{project.id}} </a>        you can do this or this -->
-<li><a href="{% url 'project' project.id %}">title: {{project.title}} </a>---   id:{{project.id}} --- description:{{project.description}}</li>
+<li><a href="{% url 'project' project.id %}">title: {{project.title}} </a>---  description:{{project.description}}</li>
 
 {% endfor %}
 <ul/>

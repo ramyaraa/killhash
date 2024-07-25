@@ -26,7 +26,7 @@ class Review(models.Model):
     )
     # owner =
     # this is mean if you delete the project it will delete the review you call the project in parameter
-    project = models.ForeignKey(project, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     body = models.TextField(null=True, blank=True)
     #  choices=VOTE_TYPE for upvote and downvote
     value = models.CharField(max_length=200, choices=VOTE_TYPE)
