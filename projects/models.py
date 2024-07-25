@@ -1,7 +1,7 @@
 from django.db import models
 import uuid
 
-class project(models.Model):
+class Project(models.Model):
     title = models.CharField(max_length=200) 
     description = models.TextField(null=True, blank=True)
     demo_link = models.CharField(max_length=2000,null=True, blank=True)
