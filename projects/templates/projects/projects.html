@@ -1,22 +1,29 @@
-{% extends 'main.html'%}
+{% extends 'main.html'%} {% block content %}
 
-{% block content %}
-<p>you are in the {{page}} page.</p>
+<h1>Projects</h1>
 
-{% if number > 10 %}
-<p>number is greater than 10</p>
-{% else %}
-<p>number is less than 10</p>
-{% endif %}
-
-<hr>
-
-<ul>
+<hr />
+<table>
+  <tr>
+    <th>Id</th>
+    <th>project</th>
+    <th>positive votes</th>
+    <th>votes</th>
+    <th></th>
+  </tr>
 {% for project in projects %}
-<!-- <a href="/project/{{project.id}}"> id:{{project.id}} </a>        you can do this or this -->
-<li><a href="{% url 'project' project.id %}">title: {{project.title}} </a>---  description:{{project.description}}</li>
-
+<tr>
+  <td>{{project.id}}</td>
+  <td>{{project.title}}</td>
+  <td>{{project.vote_ratio}}%</td>
+  <td>{{project.vote_total}}</td>
+  <td>{{project.created}}</td>
+  <td>
+    <a href="{% url 'project' project.id %}">View</a>
+  </td>
+</tr>
 {% endfor %}
-<ul/>
+</table>
 
-{% endblock content %}
+
+  {% endblock content %}
