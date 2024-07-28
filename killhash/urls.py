@@ -6,7 +6,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('projects.urls')),# it tells the website if user type nothing , including all urls in projects
+    path('projects/', include('projects.urls')),
+    path('', include('users.urls')),
     
 ]
 

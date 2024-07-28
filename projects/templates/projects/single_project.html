@@ -1,17 +1,5 @@
 {% extends "main.html" %}
 {% block content %}
-
- {% for tag in project.tags.all %}
- <span style="border: 1px solid black;"> {{tag}}</span>
- {% endfor %}
-<br>
-
-
-
-
-
-
-
   <!-- Main Section -->
   <main class="singleProject my-md">
    <div class="container">
@@ -36,13 +24,12 @@
        </div>
        <div class="column column--2of3">
          <img class="singleProject__preview" src="{{project.featured_image.url}}" alt="portfolio thumbnail" />
-         <a href="profile.html" class="singleProject__developer">Md. Shahriar Parvez</a>
-         <h2 class="singleProject__title">{{project.title}}</h2>
+         <a href="{% url 'user-profile' project.id  %}" class="singleProject__developer">Md. Shahriar Parvez</a>
+         <h2 class="singleProject__title">{{project.owner.name}}</h2>
          <h3 class="singleProject__subtitle">About the Project</h3>
          <div class="singleProject__info">
             {{project.description}}
          </div>
-
          <div class="comments">
            <h3 class="singleProject__subtitle">Feedback</h3>
            <h5 class="project--rating">

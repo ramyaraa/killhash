@@ -1,10 +1,11 @@
 from django.db import models
 import uuid
+from users.models import Profile
 
 class Project(models.Model):
+    owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, blank=True)
     title = models.CharField(max_length=200) 
     description = models.TextField(null=True, blank=True)
-    # qdding a default image if there is no image
     featured_image = models.ImageField(null=True, blank=True, default="default.jpg")
     demo_link = models.CharField(max_length=2000,null=True, blank=True)
     source_link = models.CharField(max_length=2000,null=True, blank=True)
